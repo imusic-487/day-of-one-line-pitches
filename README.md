@@ -20,8 +20,8 @@ This is an entry for the make.fun one-line bounty
 [u-ronigrv-a-day-of-one-line-pitches-12cd9bb3](https://make.fun/bounty/u-ronigrv-a-day-of-one-line-pitches-12cd9bb3).
 `main.py` copies `line.txt` — the entry, exactly as written — to
 `/output/entry.txt` byte for byte, and fails loudly if the copy differs
-in size or bytes, or if the text is not 1–240 characters. Nothing else:
-no network, no randomness, no timestamps.
+in size or bytes, or if the text is not a single line of 1–240
+characters. Nothing else: no network, no randomness, no timestamps.
 
 ## Run it locally
 
@@ -33,6 +33,12 @@ Or point it at a local directory instead of `/output`:
 
 ```sh
 MAKEFUN_OUTPUT_DIR=./out python3 main.py   # writes ./out/entry.txt
+```
+
+Validate the entry without writing anything:
+
+```sh
+python3 main.py --check    # prints "entry OK (183 bytes, 181 characters)"
 ```
 
 Requires Python 3.13 (standard library only).
